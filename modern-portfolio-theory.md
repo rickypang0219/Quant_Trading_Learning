@@ -6,10 +6,10 @@
 In here, we review the basic of statistics for later use of understanding portforlio theory (Markowitz Model). Given an random vairable $X$ and the its distribution. The expectation value of $X$ is given by 
 
 $$
-\mathbb E [ X ] = \sum_k p_k x_k ~\text{or}~ \int  p(x) x dx 
+\mathbb E [ X ] = \sum_k p_k x_k,~~\text{or}~ \int  p(x) x dx 
 $$
 
-For instance, if $X ~ Bin(n,p)$ the corresponding distribution of a random variabl $X$ is 
+For instance, if $X \sim Bin(n,p)$ the corresponding distribution of a random variabl $X$ is 
 
 $$
 P(X = k) = { n\choose k} p^k q^{n-k}, 
@@ -23,13 +23,13 @@ $$
 One shorter way to come up with the expectation of Binomial distributed variables is by imagining there are total $n$ trial and each of them is distributed as $Bern(p)$ **independently**. Therefore, we have 
 
 $$
-X = I_1 + I_2 + \cdots I_n, ~ I_i \sim Bern(p), 
+X = I_1 + I_2 + \cdots +  I_n, ~ I_i \sim Bern(p), 
 $$
 
 By linearity of expectation value, 
 
 $$
-\mathbb E(X) = \mathbb E(I_1 + I_2 + \cdots I_n) = \mathbb E(I_1) + \cdots + \mathbb E(I_n) = np 
+\mathbb E(X) = \mathbb E(I_1 + I_2 + \cdots + I_n) = \mathbb E(I_1) + \cdots + \mathbb E(I_n) = np 
 $$
 
 Apart from the expectation values, the **variance** of a given random variable is also telling. The variance is given by 
@@ -43,6 +43,7 @@ $$
 $$
 
 The variance is always positive. We can prove it using Jensne's inequality since $X^2$ is a convex function. Let a square function be $f( \cdot) = (\cdot)^2$. Using Jensen's inequality we cna show that 
+
 $$
 \begin{align*}
 f(\mathbb E (X)) \leq \mathbb E ( f(X))  \implies \mathbb E(X)^2 \leq \mathbb E(X^2),
@@ -81,7 +82,7 @@ The main idea of Markowitz model is that investing all the money in a single sto
 
 
 ![Stock Price](./images/MPT/stockprice.jpg) 
-*The stock prices of different companies. This is an example of our portfolio including 8 companies. As we can see that the stock prices fluctuated in between 2013 to 2016. When one stock price went up, the other might go up or down. Therefore, combining these effects makes our portfolio more predictable in order to hedge risk.*
+*The stock prices of different companies. This is an example of our portfolio including 8 companies. As we can see that the stock prices fluctuated in between 2013 to 2016. When one stock price went up, the other might go up or down. Therefore, combining these effects makes our portfolio more predictable in order to hedge risk.* [code](./codes/MPT_Markowitz_Model.ipynb)
 
 
 Before going to the indepth mathematical discussion of Markowitz model, there are some assumptions associated with it 
